@@ -8,37 +8,66 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mainStyle.css">
   <title>Václav Staněk</title>
 </head>
 
 <body>
   <!--navmenu-->
-  <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <span class="navbar-brand text-secondary">Václav Staněk</span>
+  <!-- <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+    <span class="navbar-brand text-white">Václav Staněk</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-secondary"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav text-center ml-lg-auto px-2">
+      <div class="navbar-nav text-center ml-lg-auto px-0 px-lg-3">
         <a class="nav-link link home" href="#aboutMe">O mě</a>
         <a class="nav-link link home" href="#technology">Co umím</a>
         <a class="nav-link link home" href="#projects">Moje práce</a>
         <a class="nav-link link home" href="#hobbies">Co mě baví</a>
-        <!-- <a class="nav-link link home" href="#">Kontakt</a> -->
+        <a class="nav-link link home pb-2" href="#contact">Kontakt</a>
       </div>
     </div>
+  </nav> -->
+  <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+    <span class="navbar-brand text-white">Václav Staněk</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav text-center ml-lg-auto px-0 px-lg-3" data-target="#navbarNav" data-toggle="collapse">
+        <li class="nav-item">
+          <a class="nav-link home" href="#aboutMe">O mě</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link home" href="#technology">Co umím</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link home" href="#projects">Moje práce</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link home" href="#hobbies">Co mě baví</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link home pb-2" href="#contact">Kontakt</a>
+        </li>
+      </ul>
+    </div>
   </nav>
+  <!--hero-->
   <section id="hero">
-    <div id="hero-content" class="container-fluid">
-      <h1 class="">Let`s write some code {<span class="text-secondary">...</span>}</h1>
+    <div id="hero-content"
+      class="container-fluid d-flex align-items-center justify-content-center justify-content-lg-start">
+      <div class="overlay"></div>
+      <h1 class="text-center mb-3 ml-lg-5">Let`s write some code {<span class="text-white">...</span>}</h1>
     </div>
   </section>
   <!--About me-->
   <section id="aboutMe">
     <div class="container text-center text-primary mb-5">
-      <h3 class="py-4 mb-5">Vítej na mých stránkách</h3>
+      <h3 class="py-5 mb-5">Vítej na mých stránkách</h3>
       <div class="row">
         <div class="col-lg-4 text-lg-right">
           <img src="img/Me.png" alt="" width="300px" height="300px" id="me" class="img-fluid mb-2 mb-lg-0">
@@ -53,7 +82,7 @@
             Proč? No, je to práce tvořivá, nutí člověka přemýšlet... A možná taky proto že - jak řekl jeden můj známý:
             "Kdyby to bylo jednoduché tak bys do toho nešel."
             Pokud by tě zajímaly moje dosavadní pracovní zkušenosti stáhni si&nbsp;<a href="download/CvStanek.docx"
-              id="cv-link" class="home">moje&nbsp;CV</a>.Nebo napiš na <em>w.stanek&nbsp;zavinac&nbsp;seznam.cz</em>
+              id="" class="home">moje&nbsp;CV</a>, nebo mi napiš <a href="#contact" class="home">zprávu</a>.
           </p>
         </div>
       </div>
@@ -64,7 +93,7 @@
   <!--technologie-->
   <section id="technology">
     <div class="bg-primary">
-      <div class="container text-center text-secondary pb-5">
+      <div class="container text-center text-white pb-5">
         <h3 class="py-5">Co umím</h3>
         <h4>frontend</h4>
         <div class="row">
@@ -118,12 +147,9 @@
   </section>
   <!--projekty-->
   <section id="projects">
-    <div class="container text-center text-primary mb-5">
-      <div class="py-5">
-        <h3 class="">Moje práce</h3>
-        <span class="text-muted d-sm-none d-block">Swipe left or right to see more</span>
-      </div>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="container text-primary mb-5 text-center">
+      <h3 id="project-header" class="py-5 mb-0">Moje práce</h3>
+      <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="card mb-3">
@@ -139,17 +165,18 @@
                       Technologie: HMTL5, CSS3, Sass, Bootstrap v4.6.1
 
                     </p>
-                    <a href="" class="home card-link">Kód</a>
+                    <a href="https://github.com/w-stanek/web/blob/main/portfolio.html" target="_blank"
+                      class="home card-link">Kód</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <div class="card mb-3">
+            <div class="card mb-3 rounded">
               <div class="row no-gutters">
                 <div class="col-lg-8">
-                  <img src="img/projects/hotel greece.jpg" alt="hotel greece" class="img-fluid">
+                  <img src="img/projects/hotel greece.jpg" alt="hotel greece" class="img-fluid rounded">
                 </div>
                 <div class="col-lg-4 d-flex align-items-center">
                   <div class="card-body">
@@ -158,8 +185,9 @@
                       Vytvořeno v rámci školního cvičení za 7hodin. Napsáno ve VS Code.
                       Technologie: HMTL5, CSS3, Sass, Bootstrap v4.6.1
                     </p>
-                    <a href="" class="home card-link">Kód</a>
-                    <a href="" class="home card-link">Spustit</a>
+                    <a href="https://github.com/w-stanek/web/blob/main/hotel%20greece.html" target="_blank"
+                      class="home card-link">Kód</a>
+                    <a href="https://w-stanek.github.io/index.html" target="_blank" class="home card-link">Spustit</a>
                   </div>
                 </div>
               </div>
@@ -169,23 +197,24 @@
             <img class="d-block w-100" src="..." alt="Third slide">
           </div> -->
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <a class="carousel-control-prev py-3" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <div class=""></div>
+        <a class="carousel-control-next py-3" href="#carouselExampleControls" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <hr class="my-5 my-md-3">
-      <a href="#nav" class="home py-3">Home</a>
+
+      <a href="#nav" class="home mb-0">Home</a>
     </div>
   </section>
   <!--hobby-->
   <section id="hobbies" class="">
-    <div class="bg-primary">
-      <div class="container text-center text-secondary">
+    <div class="bg-primary pb-5">
+      <div class="container text-center text-white">
         <h3 class="py-5">Co mě baví</h3>
         <h4 class="pb-2">Jachting</h4>
         <div class="row">
@@ -205,7 +234,7 @@
               neskutečná dřina, promočené hadry skrz naskrz a únava
               po celodenním zápasu s plachtami proti silnému větru který vás ne a ne pustit k vašemu vytouženému cíli.
               Vlastním průkaz VMP námořní průkaz MDČR a SRC licenci pro námořní radiostanici.
-              Pokud by si chtěl svézt tak se ozvi určitě to nějak dáme dohromady.
+              Pokud by si chtěl/a svézt tak se ozvi určitě to nějak dáme dohromady.
 
             </p>
           </div>
@@ -218,30 +247,63 @@
           </div>
           <div class="col-lg-6">
             <blockquote class="blockquote">
-              <p class="mb-0  d-none d-lg-block">Every time you move, and every time you play a note, a piece of yourself is left behind.</p>
+              <p class="mb-0  d-none d-lg-block">Every time you move, and every time you play a note, a piece of
+                yourself is left behind.</p>
             </blockquote>
             <p>
-              Hudba mě provází vpodstatě od začátku života. 
-              Mám za sebou x roků hraní na flétnu, 3 roky na klasickou kytaru, pak přišla ta elektrická a nakonec mě dali do ruky basu protože na ni nikdo hrát nechtěl.
-              Škoda, protože je to nástroj opomíjený ale velice mocný. Zkrátka basa tvrdí muziku a drží celou kapelu pohromadě.
+
+              Hrál jsem 3 roky na klasickou kytaru, pak přišla ta elektrická a nakonec mě dali do ruky basu protože na
+              ni nikdo hrát nechtěl.
+              Škoda, protože je to nástroj velice mocný. Zkrátka basa tvrdí muziku a drží celou kapelu pohromadě.
 
             </p>
           </div>
         </div>
         <hr class="my-5 my-md-3">
-        <a href="#nav" class="home py-3">Home</a>
+        <a href="#nav" class="home py-3 mb-0">Home</a>
       </div>
     </div>
   </section>
-  <footer id="footer">
+  <!--contact-->
+  <scetion id="contact">
+    <div class="container text-center text-primary mb-5">
+      <h3 class="py-5">Napiš zprávu</h3>
+      <form class="">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+              <label for="name">Jméno</label>
+              <input type="text" class="form-control" id="text" placeholder="Jan Novák">
+            </div>
+            <div class="form-group">
+              <label for="email">Tvůj email</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="@">
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="form-group d-flex flex-column">
+              <label for="text" class="text-left">Text</label>
+              <textarea name="text" id="text" class="form-control" cols="" rows="6">"Formulář zatím není funkční můžeš psát přímo na W.STANEK zavinac SEZNAM.CZ"
+              </textarea>
+            </div>
+          </div>
+        </div>
+        <span type="submit" class=" btn text-secondary home">Pošli</span>
+      </form>
 
-    <div class="container-fluid text-center text-secondary display-6 bg-primary py-5">
-      <hr>
+      <hr class="my-5 my-md-3">
+      <a href="#nav" class="home py-3 mb-0">Home</a>
+    </div>
+  </scetion>
+  <!--footer-->
+  <footer id="footer">
+    <div class="container-fluid text-center text-white display-6 bg-primary py-5">
       <div class="row">
         <div class="col-md-6 d-flex flex-column">
           &copy; Václav Staněk 2021
           <span>Credit for background image bellow</span>
-          <a href="https://www.freepik.com/vectors/technology" target="_blank">Technology vector created by starline -
+          <a href="https://www.freepik.com/vectors/technology" target="_blank" id="credit-link" class="home">Technology
+            vector created by starline -
             www.freepik.com</a>
         </div>
         <div class="col-md-6 d-flex align-items-center justify-content-center mt-4">
