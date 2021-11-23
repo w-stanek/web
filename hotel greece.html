@@ -83,33 +83,34 @@
                 </div>
             </form>
             <div class="mb-3 text-center">
-            <button class="btn btn-primary mx-1 video-btn" data-toggle="modal" data-toggle="modal"
-                data-src="https://www.youtube.com/embed/TOm4NiBlUrI" data-target="#myModal">Virtual
-                tour</button>
+                <button class="btn btn-primary mx-1 video-btn" data-toggle="modal" data-toggle="modal"
+                    data-src="https://www.youtube.com/embed/TOm4NiBlUrI" data-target="#myModal">Virtual
+                    tour</button>
             </div>
         </div>
     </section>
     <!--navmenu-->
     <div class="sticky-top">
-        <nav id="Menu"class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav id="Menu" class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto" data-toggle="collapse" data-target="#navbarNav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#history">History <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#rooms">Rooms</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#gallery">Gallery</a>
-                </li>
-              </ul>
+                <ul id="navUl" class="navbar-nav ml-auto" data-toggle="collapse" data-target="#navbarNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history">History <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rooms">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                </ul>
             </div>
-          </nav>
+        </nav>
     </div>
     <!--history-->
     <div id="history" class="placeholder"></div>
@@ -123,7 +124,7 @@
                         Trieste, Italy, whose family originated on the island of Limnos. He was one of many Greeks and
                         foreigners from abroad who came to Greece after the country was freed from the Ottoman's just
                         twelve years before. At the time Athens was a little podunk town of unpaved streets, dusty in
-                        the summer and a sea of mud in the winter. 
+                        the summer and a sea of mud in the winter.
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -153,7 +154,8 @@
                     <div class="card">
                         <img class="card-img-top" src="img/room1.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <p class="card-text">Our smallest budget rooms are suited for single occupancy or short-stay </p>
+                            <p class="card-text">Our smallest budget rooms are suited for single occupancy or short-stay
+                            </p>
                             <ul class="list-group list-group-flush text-center">
                                 <li class="list-group-item">1 person/night</li>
                                 <li class="list-group-item">30$</li>
@@ -171,7 +173,8 @@
                     <div class="card">
                         <img class="card-img-top" src="img/room2.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <p class="card-text">Our guest rooms, tailored to the needs of private and business travelers alike.</p>
+                            <p class="card-text">Our guest rooms, tailored to the needs of private and business
+                                travelers alike.</p>
                             <ul class="list-group list-group-flush text-center">
                                 <li class="list-group-item">1 person/night</li>
                                 <li class="list-group-item">40$</li>
@@ -189,7 +192,8 @@
                     <div class="card">
                         <img class="card-img-top" src="img/room3.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <p class="card-text">Our Deluxe Twin/Large Double also provides views over landscaped gardens.</p>
+                            <p class="card-text">Our Deluxe Twin/Large Double also provides views over landscaped
+                                gardens.</p>
                             <ul class="list-group list-group-flush text-center">
                                 <li class="list-group-item">1 person/night</li>
                                 <li class="list-group-item">50$</li>
@@ -372,6 +376,24 @@
                                 $("#video").attr('src', $videoSrc);
                             })
                         });
+                    </script>
+
+                    <script>
+                        element = document.querySelector('#navUl'); //change to your ID
+                        function myFunction(x) {
+                            if (!(x.matches)) { // If media query doesnt matches
+                                element.removeAttribute('data-toggle');
+                                element.removeAttribute('data-target');
+                            }
+                            else {
+                                element.setAttribute("data-toggle", "collapse");
+                                element.setAttribute("data-target", "#navbarNav");
+                            }
+                        }
+
+                        var x = window.matchMedia("(max-width: 992px)") //chnage to your menu collapse breakpoint
+                        myFunction(x) // Call listener function at run time
+                        x.addListener(myFunction) // Attach listener function on state changes 
                     </script>
 
 </body>
