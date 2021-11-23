@@ -14,16 +14,16 @@
 
 <body>
 <!--navbar-->
-  <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+  <nav id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <span class="navbar-brand text-white">Václav Staněk</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav text-center ml-lg-auto px-0 px-lg-3" data-target="#navbarNav" data-toggle="collapse">
+      <ul id="navUl" class="navbar-nav text-center ml-lg-auto px-0 px-lg-3" data-target="#navbarNav" data-toggle="collapse">
         <li class="nav-item">
-          <a class="nav-link home" href="#aboutMe">O mě</a>
+          <a class="nav-link home" href="#hero">O mě</a>
         </li>
         <li class="nav-item">
           <a class="nav-link home" href="#technology">Co umím</a>
@@ -49,7 +49,7 @@
     </div>
   </section>
   <!--About me-->
-  <section id="aboutMe">
+  <section id="aboutMe" class="">
     <div class="container text-center text-primary mb-5">
       <h3 class="py-5 mb-5">Vítej na mých stránkách</h3>
       <div class="row">
@@ -70,14 +70,13 @@
           </p>
         </div>
       </div>
-      <hr class="my-5 my-md-3">
-      <a href="#nav" class=" home py-3">Home</a>
     </div>
   </section>
+  <div id="technology" class="">&nbsp;</div>
   <!--technologie-->
-  <section id="technology">
+  <section >
     <div class="bg-primary">
-      <div class="container text-center text-white pb-5">
+      <div class="container text-center text-white pb-5 mt-3">
         <h3 class="py-5">Co umím</h3>
         <h4>frontend</h4>
         <div class="row">
@@ -123,15 +122,14 @@
           <div class="col-md-6 d-flex align-items-center justify-content-center">
             <span>Blender</span>
           </div>
-          <hr class="mb-5 mb-md-3">
         </div>
-        <a href="#nav" class="home py-3">Home</a>
       </div>
     </div>
   </section>
+  <div id="projects" class="">&nbsp;</div>
   <!--projekty-->
-  <section id="projects">
-    <div class="container text-primary mb-5 text-center">
+  <section  class="">
+    <div class="container text-primary mb-5 text-center mt-3">
       <h3 id="project-header" class="py-5 mb-0">Moje práce</h3>
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
@@ -191,14 +189,13 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-
-      <a href="#nav" class="home mb-0">Home</a>
     </div>
   </section>
+  <div class="" id="hobbies">&nbsp;</div>
   <!--hobby-->
-  <section id="hobbies" class="">
+  <section class="">
     <div class="bg-primary pb-5">
-      <div class="container text-center text-white">
+      <div class="container text-center text-white mt-3">
         <h3 class="py-5">Co mě baví</h3>
         <h4 class="pb-2">Jachting</h4>
         <div class="row">
@@ -243,8 +240,6 @@
             </p>
           </div>
         </div>
-        <hr class="my-5 my-md-3">
-        <a href="#nav" class="home py-3 mb-0">Home</a>
       </div>
     </div>
   </section>
@@ -274,9 +269,6 @@
         </div>
         <span type="submit" class=" btn text-secondary home">Pošli</span>
       </form>
-
-      <hr class="my-5 my-md-3">
-      <a href="#nav" class="home py-3 mb-0">Home</a>
     </div>
   </scetion>
   <!--footer-->
@@ -309,6 +301,23 @@
     })
 
   </script>
+  <script>
+    element = document.querySelector('#navUl'); //change to your ID
+    function myFunction(x) {
+        if (!(x.matches)) { // If media query doesnt matches
+            element.removeAttribute('data-toggle');
+            element.removeAttribute('data-target');
+        }
+        else {
+            element.setAttribute("data-toggle", "collapse");
+            element.setAttribute("data-target", "#navbarNav");
+        }
+    }
+
+    let x = window.matchMedia("(max-width: 992px)") //chnage to your menu collapse breakpoint
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes 
+</script>
 </body>
 
 </html>
